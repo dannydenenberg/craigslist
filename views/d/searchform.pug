@@ -1,0 +1,86 @@
+//- TODO: edit search
+form(id='searchform' class='search-form' action='/search/bts')
+  div(class='querybox')
+    div(class='form-tab js-only')
+      span(class='search-open' title="hide search") «
+      //- span(class='search-closed' title="show search") <<
+
+    input(type='text' placeholder='search beauty services' name='query' id='query' autocorrect='off' class='flatinput ui-autocomplete-input' autocapitalize='off' autocomplete='off' data-autocomplete='search')
+    button(type='submit' class='searchbtn')
+      span search AE
+
+  //- sidebar 
+  div(class='search-options-container')
+    div(class='search-options')
+      div(class='searchgroup categories')
+        div(class='cattitle')
+          a(href="/search/bts" title='clear all search parameters' class='reset')
+            | beauty services
+      div(class='searchgroup')
+        ul
+          li
+            label(class='srchType')
+              input(type='checkbox' name='srchType' class value='T')
+              | search titles only
+          li
+            label(class='postedToday')
+              input(type='checkbox' name='postedToday' class='autosubmit' value='1')
+              | posted today
+      div(class='searchgroup')
+        span(class='searchfieldlabel')
+          | miles from zip
+        input(size='5' maxlength='5' inputmode='numeric' class='flatinput searchInput search_distance' placeholder='miles' name='search_distance')
+        | &nbsp;
+        input(type='text' class='flatinput searchInput postal' placeholder='from zip' size='7' name='postal')
+        | &nbsp;
+        span(class='icon icon-locate')
+      div(class='searchgroup resetsearch')
+        a(href="/search/bts" title='clear all search parameters' class='reset linklike')
+          | reset
+        button(type='submit' class='searchlink linklike')
+          | update search
+
+  //- LEGEND (pagination, etc)
+  div(class='search-legend')
+    div(class='search-view js-only')
+      div(class='dropdown dropdown-icons dropdown-arrows dropdown-view' role='toolbar' aria-label='view options' aria-expanded='false')
+        select
+          option list &nbsp; &nbsp; &nbsp;&nbsp;
+    div(class='search-sort')
+      a(class='linklike' href='/search/bts?sort=date&' data-selection='date' title='show newwest matches first')
+         | newest
+    
+    div(class='paginator buttongroup firstpage lastpage')
+      span(class='buttons')
+        //- if there are actually previous things to go to
+        a(href='/search/bts?sort=date' class='button first' title='first page')
+          | <<
+        //- no previous things to go to
+        span(class='button first' title='first page')
+          | <<
+        
+        a(href='/search/bts?sort=date' class='button prev' title='previous page')
+          | < prev
+        span(class='button prev' title='previous page')
+          | < prev
+        
+        span(class='button pagenum')
+          span(class='range')
+            span(class='rangeFrom')
+              | 1
+            | &nbsp; - &nbsp;
+            span(class='rangeTo')
+              | 2
+          | / 
+          span(class='totalcount')
+            | 2
+        
+        a(class='button next' title='next page')
+          | next >
+        span(class='button next' title='next page')
+          | next >
+        
+
+  //- LIST of posts
+  include content
+

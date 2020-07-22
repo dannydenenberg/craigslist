@@ -1,0 +1,40 @@
+header(class='global-header wide')
+  a(class='header-logo' name='logoLink' href='/')
+    | AE
+  //- topics form
+  nav(class="breadcrumbs-container")
+    //- TODO: action here
+    form(id='breadcrumbform' class='breadcrumbs-form' method='get' action="/search/bts" data-action="/search/###/bts")
+      ul(class='breadcrumbs ')
+        li(class='crumb area')
+          select(id="areaAbb" class='js-only')
+            option omaha
+            option alabama
+            option boston
+          span(class='breadcrumb-arrow') 
+            | > 
+        li(class='crumb section')
+          select(id="catAbb" class='js-only')
+            option housing
+            option jobs
+            option for sale
+          span(class='breadcrumb-arrow') 
+            | >
+        li(class='crumb category')
+          select(id="catAbb" class='js-only')
+            option all
+            option real estate
+          span(class='breadcrumb-arrow') 
+
+
+  div(class='userlinks')
+    ul(class="user-actions")
+      li(class='user post')
+        a(href='#')
+          | post
+      li(class='user account')
+        a(href='#')
+          | account
+
+
+

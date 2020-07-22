@@ -1,0 +1,48 @@
+div(id='leftbar')
+  //- site logo
+  div(id='logo')
+    a(href='#')
+      | the ae
+
+  //- account and posts
+  ul(id='postlks')
+    li
+      a(id="post" href="#") create a posting
+    li
+      a(href="#") my account
+
+  //- search bar
+  form(id="search" class="homepage-search" action="/search" method="GET")
+    input(id="query" data-autocomplete="search-count" class="querybox flatinput" name="query" autocorrect="off" autocomplete="off" placeholder="search kellyslist")
+
+  //- calendar TODO: 
+  div
+    include calendar
+  
+  //- 2 sections of extra links
+  ul(class="leftlinks" id="user_help")
+    li
+      a(href="#")
+        | the ae app
+    li
+      a(href="#")
+        | help, faq, personal list
+    li
+      a(href="#")
+        | terms of use
+
+  ul(class="leftlinks" id="theae_resources")
+    li
+      a(href="#")
+        | about the ae
+    li
+      a(href="#")
+        | open source
+
+  
+  //- autocomplete for search bar
+  ul(class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" data-input="search-count")
+    li(class="ui-menu-item")
+      a result #1
+
+

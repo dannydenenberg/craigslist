@@ -1,0 +1,74 @@
+header(class='dateReplyBar')
+  div(class='prevnext-sec')
+    div(class='prevnext js-only show-prevnext')
+      a(class='prev' href='/bik/title/prev/post')
+        | ◀  prev 
+      a(class='backup' title='back to search' href='/back/to/search')
+        | ▲
+      a(class='next' href='/next')
+        |  next ▶ 
+  div(class='reply-button-row')
+    div(class='actions-combo')
+      button(role='button' class='reply-button js-only' data-href='/service/aslf')
+        | reply
+      //- here is what should show when the reply button is clicked
+      //- TODO: make this show ONLY on click of reply button
+      div(class='reply-info js-only' style='display:none;')
+        aside(class='reply-flap js-captcha')
+          ul
+            li
+              h1 contact name:
+              p george
+            li(class='reply-tel')
+              h1 text:
+              p(class='reply-tel-number' style="")
+                | 402-844-2319
+            li(class='reply-email')
+              h1 reply by email:
+              p(class='reply-tel-number' style="")
+                //- TODO: format this email
+                a(href="mailto:info@example.com?subject=subject&cc=cc@example.com")
+                  | juliegg@gmail.com
+            li(class='mailto-lnks')
+              h1 webmail links:
+              p(class=`reply-tel-number` style="")
+                //- TODO: FORMAT this email
+                a(href="mailto:george@gmail.com?subject=Listing Title HERE&body=Email Body here")
+                  | gmail
+
+      div(class='fave-unfave action')
+        //- star NOT filled in 
+        div(class='fave' role='button' title='add to favorites')
+          div(class='icon icon-star' aria-hidden='true')
+          div(class='action-label') favorite
+        //- star YES filled in
+        div(class='unfave' role='button' title='remove from favorites')
+          div(class='icon icon-star fav' aria-hidden='true')
+          div(class='action-label') favorite
+
+      //- TODO: on/off
+      div(class='banish-unbanish action')
+        div(class='banish' role='button' title='hide this posting')
+          div(class='icon icon-trash' aria-hidden='true')
+          div(class='action-label') hide
+        div(class='unbanish' style='display: none;' role='button' title='restore this posting')
+          div(class='icon icon-trash red' aria-hidden='true')
+          div(class='action-label') unhide  
+      
+      //- flagging posts
+      div(class='flag-action action')
+        div(class='flag' data-flag='28' role='button' title='flag as prohibited / span / miscategorized')
+          div(class='flagIcon' aria-hidden='true')
+            span(class='white-flag') ⚐
+            span(class='black-flag') ⚑
+          div(class='action-label') flag
+        div(class='unflag')
+          div(class='flagIcon' aria-hidden='true') ⚑
+          div(class='action-label') flagged
+
+    p(id='display-date' class='postinginfo reveal' style='opacity: 1')    
+      | Posted &nbsp;
+      time(class='date timeago' datetime='2020-07-15T19:20:27-0500' title="2020-07-15 19:20")
+        | 6 days ago
+
+    a(href='#' id='printme') print QR
