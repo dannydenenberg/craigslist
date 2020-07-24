@@ -4,9 +4,10 @@ head
   link(rel='stylesheet' href='/css/site.css')
   link(rel='stylesheet' href='/css/homepage.css')
 
-body(class="homepage")
+body(class="homepage w1024 desktop")
   div(class="wrapper")
     section(class="page-container")
+      include homepage/header
       include homepage/topban
       include homepage/leftbar
       include homepage/center
@@ -14,3 +15,10 @@ body(class="homepage")
 
     include homepage/footer
 
+script.
+
+    if (pagemode == 'mobile') {
+        var s = document.getElementById('search');
+        var c = document.getElementById('center');
+        c.insertBefore(s, c.children[0]);
+    }

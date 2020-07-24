@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
   })
 });
 
+app.get('/login', (req, res) => {
+  console.log('login')
+  res.render('account');
+})
+
 app.get('/d', (req, res) => {
   console.log('in d')
   res.render('d');

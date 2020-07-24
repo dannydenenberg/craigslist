@@ -2,3 +2,23 @@ nav(id='topban')
   div(class='regular-area')
     h2(class="area")
       | omaha / council bluffs
+    ul(class='sublinks')
+      li 
+        a(href='/') chicago
+      li 
+        a(href='/') newton
+
+  //- when they click and change location
+  <div class="enter-area">
+    <input type="text" class="subarea-input flatinput ui-autocomplete-input" data-autocomplete="subarea" value="" autocomplete="off">
+  </div>
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none; top: 59px; left: 331px; width: 258px;" data-input="subarea">
+  <li class="ui-menu-item" id="ui-id-27" tabindex="-1">
+    <a>Hinsdale, NH</a>
+  </li>
+  <li class="ui-menu-item" id="ui-id-28" tabindex="-1">
+    <a>Hinsdale, MA</a>
+  </li>
+</ul>
